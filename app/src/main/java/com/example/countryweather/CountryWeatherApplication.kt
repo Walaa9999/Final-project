@@ -7,12 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.countryweather.net.countries.CountryApiService
 import com.example.countryweather.net.countries.CountryDataItem
 import com.example.countryweather.net.countries.CountryEndpointInterface
+import com.example.countryweather.net.weather.WeatherApiInterface
+import com.example.countryweather.net.weather.WeatherApiService
+import com.example.countryweather.net.weather.WeatherDataItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.StringBuilder
+import kotlin.text.StringBuilder
 
 
 class CountryWeatherApplication : AppCompatActivity() {
@@ -20,7 +21,32 @@ class CountryWeatherApplication : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        getCountriesData()
+        getWeatherData()
+    }
+
+    private fun getWeatherData() {
+        val apiService= WeatherApiService.getInstance().create(WeatherApiInterface::class.java)
+        apiService.getWeatherData(20.0,60.25,2,"1867722b6af87e1d0388e10c5a94be34").enqueue(object : Callback<List<WeatherDataItem>?> {
+            override fun onResponse(
+                call: Call<List<WeatherDataItem>?>,
+                response: Response<List<WeatherDataItem>?>
+            ) {
+                val responseBody = response.body()!!
+                val stringBuilder = StringBuilder()
+                for(data in responseBody){
+                    stringBuilder.append("hum : ${data.humidity}")
+                    stringBuilder.append("Tmp : ${data.temp.max}")
+                    stringBuilder.append("Tmp : ${data.temp.min}")
+                }
+
+                findViewById<TextView>(R.id.txt).text = response.toString()
+
+            }
+
+            override fun onFailure(call: Call<List<WeatherDataItem>?>, t: Throwable) {
+                Log.i("Main", "${t.message}")
+            }
+        })
     }
 
     private fun getCountriesData() {

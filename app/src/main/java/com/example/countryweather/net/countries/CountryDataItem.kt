@@ -6,4 +6,5 @@ data class CountryDataItem(
     val name: String,
     val population: Int,
     val region: String,
+    val latlng: List<Double>,
 )
