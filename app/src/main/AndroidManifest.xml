@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Countryweather" >
         <activity
-            android:name=".CountriesActivity"
-            android:exported="false" />
-        <activity
             android:name=".CountryWeatherActivity"
             android:exported="true" >
             <intent-filter>

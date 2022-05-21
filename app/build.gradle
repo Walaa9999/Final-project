@@ -55,12 +55,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
 
 
+    //RX java
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //RX android
     implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
-
-
-
-
 
     //dagger
     implementation "com.google.dagger:dagger:2.40"
