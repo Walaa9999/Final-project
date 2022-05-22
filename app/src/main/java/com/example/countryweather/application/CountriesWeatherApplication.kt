@@ -6,9 +6,14 @@ import com.example.countryweather.di.DaggerAppComponent
 
 open class CountriesWeatherApplication:Application() {
 
-    val appComponent: AppComponent by lazy {
+    override fun onCreate() {
+        super.onCreate()
 
-        DaggerAppComponent.factory().create(applicationContext)
+        appComponent = DaggerAppComponent.builder().build()
+    }
+
+    companion object{
+        lateinit var appComponent:AppComponent
     }
 
 }
