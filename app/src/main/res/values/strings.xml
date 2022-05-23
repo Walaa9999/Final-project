@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">countryweather</string>
+    <string name="search_for_countries">Search for Countries</string>
 </resources>
