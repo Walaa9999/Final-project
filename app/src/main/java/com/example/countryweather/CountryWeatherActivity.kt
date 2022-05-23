@@ -18,7 +18,6 @@ class CountryWeatherActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_weather)
 
-        CountriesWeatherApplication.appComponent.inject(this)
         countriesViewModel.loadCountries()
 
         countriesViewModel.countriesLiveData.observe(this){
@@ -29,7 +28,11 @@ class CountryWeatherActivity() : AppCompatActivity() {
 
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
 
+        countriesViewModel.dispose()
+    }
 
 
 }
