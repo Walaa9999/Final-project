@@ -18,14 +18,12 @@ class CountriesViewModel @Inject constructor
     val countriesLiveData: LiveData<List<CountryDataItem>>
         get() = _countriesLiveData
 
-    private lateinit var _disposable: Disposable
-    val disposable :Disposable
-        get() = _disposable
+    private lateinit var disposable: Disposable
 
 
     fun loadCountries(){
 
-        _disposable= countriesRepository
+        disposable= countriesRepository
             .getCountriesList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -38,6 +36,11 @@ class CountriesViewModel @Inject constructor
                 })
 
     }
+
+    fun dispose(){
+        disposable.dispose()
+    }
+
 
 
 }

@@ -3,6 +3,7 @@ package com.example.countryweather
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,16 +21,15 @@ import javax.inject.Inject
 
 class CountryWeatherActivity : AppCompatActivity() {
 
-    @Inject
-   lateinit var countriesViewModel: CountriesViewModel
 
-    init{
-       CountriesWeatherApplication.appComponent.inject(this)
-        countriesViewModel.loadCountries()
-    }
+    private val countriesViewModel by viewModels<CountriesViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_weather)
+        //CountriesWeatherApplication.appComponent.inject(this)
+        countriesViewModel.loadCountries()
+
         val list = ArrayList<Country>()
 
         countriesViewModel.countriesLiveData.observe(this){
@@ -69,6 +69,11 @@ class CountryWeatherActivity : AppCompatActivity() {
 
     }
 
+
+    override fun onDestroy() {
+        super.onDestroy()
+        countriesViewModel.dispose()
+    }
 
 
 
