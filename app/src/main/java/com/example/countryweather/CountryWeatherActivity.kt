@@ -27,7 +27,7 @@ class CountryWeatherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_weather)
-        //CountriesWeatherApplication.appComponent.inject(this)
+
         countriesViewModel.loadCountries()
 
         val list = ArrayList<Country>()
