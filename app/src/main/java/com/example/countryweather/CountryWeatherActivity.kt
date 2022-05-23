@@ -12,16 +12,14 @@ import javax.inject.Inject
 class CountryWeatherActivity() : AppCompatActivity() {
 
 
-    @Inject
-   lateinit var countriesViewModel: CountriesViewModel
+    private val countriesViewModel by viewModels<CountriesViewModel>()
 
-    init{
-       CountriesWeatherApplication.appComponent.inject(this)
-        countriesViewModel.loadCountries()
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_weather)
+
+        CountriesWeatherApplication.appComponent.inject(this)
+        countriesViewModel.loadCountries()
 
         countriesViewModel.countriesLiveData.observe(this){
             findViewById<TextView>(R.id.txt).text=it.toString()
