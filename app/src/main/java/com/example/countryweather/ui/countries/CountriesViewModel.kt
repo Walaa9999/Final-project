@@ -8,7 +8,7 @@ import com.example.countryweather.application.CountriesWeatherApplication
 import com.example.countryweather.net.countries.CountryDataItem
 import com.example.countryweather.repos.CountriesRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -24,28 +24,48 @@ class CountriesViewModel:ViewModel() {
     val countriesLiveData: LiveData<List<CountryDataItem>>
         get() = _countriesLiveData
 
-    private lateinit var disposable: Disposable
+    private val compositeDisposable = CompositeDisposable()
 
 
     fun loadCountries(){
 
-        disposable= countriesRepository
+        compositeDisposable.add(countriesRepository
             .getCountriesList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
                     _countriesLiveData.value=it
+
                 },
                 {
                     Log.i(Thread.currentThread().name,"${it.message}")
                 })
+        )
+    }
+
+
+    fun search(text:String){
+        compositeDisposable.add(
+            countriesRepository
+                .getCountriesListByName(text)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        _countriesLiveData.value=it
+                    },
+                    {
+                        Log.i(Thread.currentThread().name,"${it.message}")
+                    }))
 
     }
+
 
     fun dispose(){
-        disposable.dispose()
+        compositeDisposable.dispose()
     }
+
 
 
 

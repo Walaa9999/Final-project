@@ -4,7 +4,7 @@ import android.app.Application
 import com.example.countryweather.di.AppComponent
 import com.example.countryweather.di.DaggerAppComponent
 
-class CountriesWeatherApplication:Application() {
+class CountriesWeatherApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -12,8 +12,8 @@ class CountriesWeatherApplication:Application() {
         appComponent = DaggerAppComponent.builder().build()
     }
 
-    companion object{
-        lateinit var appComponent:AppComponent
+    companion object {
+        lateinit var appComponent: AppComponent
     }
 
 }

@@ -15,4 +15,8 @@ class CountriesRepository @Inject constructor(private val countriesDataSource:Co
        return countriesDataSource.getCountriesList()
    }
 
+    fun getCountriesListByName(name:String): Single<List<CountryDataItem>>{
+        return countriesDataSource.getCountriesListByName(name)
+    }
+
 }

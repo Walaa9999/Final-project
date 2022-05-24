@@ -6,17 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.countryweather.R
 
-class CountriesListAdapter(var countriesList:List<Country>) :
+class CountriesListAdapter() :
     RecyclerView.Adapter<CountriesListAdapter.CountriesViewHolder>() {
 
+    private val countriesList = ArrayList<Country>()
+
     inner class CountriesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var countryName = itemView.findViewById<TextView>(R.id.name)
-        var countruPopulation= itemView.findViewById<TextView>(R.id.population)
-        var countryFlag = itemView.findViewById<ImageView>(R.id.flagImage)
+        var countryName: TextView = itemView.findViewById<TextView>(R.id.name)
+        var countruPopulation: TextView = itemView.findViewById<TextView>(R.id.population)
+        var countryFlag: ImageView = itemView.findViewById<ImageView>(R.id.flagImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountriesViewHolder {
@@ -35,5 +38,13 @@ class CountriesListAdapter(var countriesList:List<Country>) :
     }
 
     override fun getItemCount(): Int = countriesList.size
+
+    fun setData(newList:ArrayList<Country>){
+        val diffCallback = CountriesDiffCallback(countriesList, newList)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        countriesList.clear()
+        countriesList.addAll(newList)
+        diffResult.dispatchUpdatesTo(this)
+    }
 
 }
