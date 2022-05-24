@@ -1,8 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:theme="@style/Theme.Material3.Light"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    style="@style/Theme.Material3.Light"
     tools:context=".ui.details.CountryDetailsFragment">
 
-</FrameLayout>
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/flagImage"
+        android:layout_width="match_parent"
+        android:layout_height="194dp"
+        android:contentDescription="country flag"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_flag_24" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/name">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/country_name"
+            android:drawableLeft="@drawable/ic_baseline_outlined_flag_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:startIconDrawable="@drawable/ic_baseline_flag_24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/population">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/count_population"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:startIconContentDescription="icon"
+        app:startIconDrawable="@drawable/ic_baseline_flag_24"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/region">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/count_region"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:startIconContentDescription="icon"
+        app:startIconDrawable="@drawable/ic_baseline_flag_24"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/capital">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/count_capital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</LinearLayout>

@@ -3,12 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.118" />
+        <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/drawable/ic_baseline_flag_24.xml" value="0.118" />
+        <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.118" />
         <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/layout/activity_countries.xml" value="0.1" />
         <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/layout/activity_country_weather.xml" value="0.22" />
         <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/layout/activity_details.xml" value="0.15896739130434784" />
         <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/layout/activity_main.xml" value="0.203125" />
         <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/layout/countrt_list_item.xml" value="0.1" />
         <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/layout/fragment_country_details.xml" value="0.203125" />
+        <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/layout/fragment_weather_details.xml" value="0.203125" />
+        <entry key="..\:/Users/Walaa/OneDrive/Desktop/Final project/Final-project/app/src/main/res/menu/menu_bottom_nav.xml" value="0.20208333333333334" />
       </map>
     </option>
   </component>
