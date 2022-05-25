@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
@@ -11,16 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.countryweather.R
 
-class CountriesListAdapter() :
+class CountriesListAdapter(private val listner:OnCardClickListner) :
     RecyclerView.Adapter<CountriesListAdapter.CountriesViewHolder>() {
 
     private val countriesList = ArrayList<Country>()
-
-    inner class CountriesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var countryName: TextView = itemView.findViewById<TextView>(R.id.name)
-        var countruPopulation: TextView = itemView.findViewById<TextView>(R.id.population)
-        var countryFlag: ImageView = itemView.findViewById<ImageView>(R.id.flagImage)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountriesViewHolder {
         return CountriesViewHolder(
@@ -33,7 +28,8 @@ class CountriesListAdapter() :
         val country = countriesList[position]
         holder.countryName.text = country.name
         holder.countruPopulation.text = country.population.toString()
-        Glide.with(holder.itemView).load(IMG_BASE+country.code+".png").into(holder.countryFlag)
+        Glide.with(holder.itemView).load(IMG_BASE+country.code+".png").override(300, 200).into(holder.countryFlag)
+
 
     }
 
@@ -45,6 +41,27 @@ class CountriesListAdapter() :
         countriesList.clear()
         countriesList.addAll(newList)
         diffResult.dispatchUpdatesTo(this)
+    }
+
+    inner class CountriesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView),View.OnClickListener {
+        var countryName: TextView = itemView.findViewById<TextView>(R.id.name)
+        var countruPopulation: TextView = itemView.findViewById<TextView>(R.id.population)
+        var countryFlag: ImageView = itemView.findViewById<ImageView>(R.id.flagImage)
+
+
+        init{
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = absoluteAdapterPosition
+            if(position!=RecyclerView.NO_POSITION)
+            listner.onCardClick(position)
+        }
+    }
+
+    interface OnCardClickListner{
+        fun onCardClick(position:Int)
     }
 
 }

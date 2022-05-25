@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Countryweather"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DetailsActivity"
+            android:name=".ui.details.DetailsActivity"
             android:exported="false" />
         <activity
             android:name=".CountryWeatherActivity"

@@ -12,14 +12,15 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class CountriesViewModel:ViewModel() {
+class CountriesViewModel : ViewModel() {
 
     @Inject
     lateinit var countriesRepository: CountriesRepository
 
-    init{
+    init {
         CountriesWeatherApplication.appComponent.inject(this)
     }
+
     private val _countriesLiveData = MutableLiveData<List<CountryDataItem>>()
     val countriesLiveData: LiveData<List<CountryDataItem>>
         get() = _countriesLiveData
@@ -27,25 +28,26 @@ class CountriesViewModel:ViewModel() {
     private val compositeDisposable = CompositeDisposable()
 
 
-    fun loadCountries(){
+    fun loadCountries() {
 
-        compositeDisposable.add(countriesRepository
-            .getCountriesList()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                    _countriesLiveData.value=it
+        compositeDisposable.add(
+            countriesRepository
+                .getCountriesList()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        _countriesLiveData.value = it
 
-                },
-                {
-                    Log.i(Thread.currentThread().name,"${it.message}")
-                })
+                    },
+                    {
+                        Log.i(Thread.currentThread().name, "${it.message}")
+                    })
         )
     }
 
 
-    fun search(text:String){
+    fun search(text: String) {
         compositeDisposable.add(
             countriesRepository
                 .getCountriesListByName(text)
@@ -53,20 +55,19 @@ class CountriesViewModel:ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     {
-                        _countriesLiveData.value=it
+                        _countriesLiveData.value = it
                     },
                     {
-                        Log.i(Thread.currentThread().name,"${it.message}")
-                    }))
+                        Log.i(Thread.currentThread().name, "${it.message}")
+                    })
+        )
 
     }
 
 
-    fun dispose(){
+    fun dispose() {
         compositeDisposable.dispose()
     }
-
-
 
 
 }

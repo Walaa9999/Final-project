@@ -1,8 +1,11 @@
 package com.example.countryweather.ui.countries
+
 import androidx.recyclerview.widget.DiffUtil
 
-class CountriesDiffCallback(private val oldList: ArrayList<Country>, private val newList: ArrayList<Country>)
-    : DiffUtil.Callback() {
+class CountriesDiffCallback(
+    private val oldList: ArrayList<Country>,
+    private val newList: ArrayList<Country>
+) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int = oldList.size
 
@@ -16,7 +19,7 @@ class CountriesDiffCallback(private val oldList: ArrayList<Country>, private val
         val (name, population, code) = oldList[oldPosition]
         val (name2, population2, code2) = newList[newPosition]
 
-        return population == population2 && code == code2 && name==name2
+        return population == population2 && code == code2 && name == name2
     }
 
 }

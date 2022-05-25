@@ -7,4 +7,7 @@
     <string name="region">Region</string>
     <string name="population">Population</string>
     <string name="name">Name</string>
+    <string name="country_flag">country flag</string>
+    <string name="country_details">Country Details</string>
+    <string name="weather">Weather</string>
 </resources>
