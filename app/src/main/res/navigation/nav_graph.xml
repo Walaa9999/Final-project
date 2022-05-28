@@ -6,12 +6,12 @@
     app:startDestination="@id/countryDetailsFragment">
     <fragment
         android:id="@+id/countryDetailsFragment"
-        android:name="com.example.countryweather.ui.details.CountryDetailsFragment"
+        android:name="com.example.countryweather.ui.details.country.CountryDetailsFragment"
         android:label="Country"
         tools:layout="@layout/fragment_country_details" />
     <fragment
         android:id="@+id/weatherDetailsFragment"
-        android:name="com.example.countryweather.ui.details.WeatherDetailsFragment"
+        android:name="com.example.countryweather.ui.details.weather.WeatherDetailsFragment"
         android:label="Weather"
         tools:layout="@layout/fragment_weather_details" />
 </navigation>

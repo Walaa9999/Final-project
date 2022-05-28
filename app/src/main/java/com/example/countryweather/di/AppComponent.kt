@@ -1,6 +1,7 @@
 package com.example.countryweather.di
 
 import com.example.countryweather.ui.countries.CountriesViewModel
+import com.example.countryweather.ui.details.weather.WeatherViewModel
 import dagger.Component
 import javax.inject.Singleton
 
@@ -9,4 +10,6 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun inject(activity: CountriesViewModel)
+    fun inject(activity: WeatherViewModel)
+
 }

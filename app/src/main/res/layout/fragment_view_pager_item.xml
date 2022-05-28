@@ -1,41 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/countryDetailsFragment"
-    style="@style/Theme.Material3.Light"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:padding="30dp"
-    android:theme="@style/Theme.Material3.Light"
-    tools:context=".ui.details.country.CountryDetailsFragment">
+    android:orientation="vertical">
 
 
-    <ImageView
-        android:id="@+id/flagImage"
-        android:layout_width="347dp"
-        android:layout_height="116dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="25dp"
-        android:contentDescription="@string/country_flag"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_baseline_flag_24" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:hint="@string/name">
+        android:hint="@string/date">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/country_name"
+            android:id="@+id/date"
             style="@style/Theme.Material3.Light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="false"
             android:cursorVisible="false"
-            android:drawableStart="@drawable/ic_baseline_outlined_flag_24"
-            android:drawableLeft="@drawable/ic_baseline_outlined_flag_24"
+            android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
             android:drawablePadding="10dp"
             android:focusable="false" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -45,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:hint="@string/population">
+        android:hint="@string/tempreature_min_max">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/count_population"
@@ -54,8 +40,8 @@
             android:layout_height="wrap_content"
             android:clickable="false"
             android:cursorVisible="false"
-            android:drawableStart="@drawable/ic_baseline_people_outline_24"
-            android:drawableLeft="@drawable/ic_baseline_people_outline_24"
+            android:drawableStart="@drawable/ic_baseline_wb_sunny_24"
+            android:drawableLeft="@drawable/ic_baseline_wb_sunny_24"
             android:drawablePadding="10dp"
             android:focusable="false" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -66,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:hint="@string/region">
+        android:hint="@string/humidity">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/count_region"
@@ -75,8 +61,8 @@
             android:layout_height="wrap_content"
             android:clickable="false"
             android:cursorVisible="false"
-            android:drawableStart="@drawable/ic_baseline_location_on_24"
-            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:drawableStart="@drawable/ic_baseline_cloud_queue_24"
+            android:drawableLeft="@drawable/ic_baseline_cloud_queue_24"
             android:drawablePadding="10dp"
             android:focusable="false" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -87,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:hint="@string/capital">
+        android:hint="@string/pressure">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/count_capital"
@@ -95,8 +81,8 @@
             android:layout_height="wrap_content"
             android:clickable="false"
             android:cursorVisible="false"
-            android:drawableStart="@drawable/ic_baseline_location_on_24"
-            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:drawableStart="@drawable/ic_baseline_cloud_queue_24"
+            android:drawableLeft="@drawable/ic_baseline_cloud_queue_24"
             android:drawablePadding="10dp"
             android:focusable="false" />
     </com.google.android.material.textfield.TextInputLayout>

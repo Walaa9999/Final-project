@@ -10,4 +10,10 @@
     <string name="country_flag">country flag</string>
     <string name="country_details">Country Details</string>
     <string name="weather">Weather</string>
+    <string name="date">Date</string>
+    <string name="tempreature_min_max">Temperature min-max</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="today">Today</string>
 </resources>

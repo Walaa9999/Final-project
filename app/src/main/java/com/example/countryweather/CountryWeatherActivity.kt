@@ -79,6 +79,8 @@ class CountryWeatherActivity : AppCompatActivity(), CountriesListAdapter.OnCardC
         intent.putExtra("population", list[position].population.toString())
         intent.putExtra("region", list[position].region)
         intent.putExtra("capital", list[position].capital)
+
+
         this.startActivity(intent)
 
     }

@@ -8,7 +8,6 @@ interface WeatherApiInterface {
 
     @GET("data/2.5/forecast/daily")
     fun getWeatherData(
-        @Query("lat") lat: Double, @Query("lon") lon: Double,
-        @Query("cnt") cnt: Int, @Query("appid") appid: String
+        @Query("appid") appid: String, @Query("q") q: String, @Query("cnt") cnt: Int,
     ): Single<List<WeatherDataItem>>
 }

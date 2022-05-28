@@ -7,10 +7,9 @@ import javax.inject.Inject
 
 class WeatherRepository @Inject constructor(private val weatherDataSource: WeatherApiInterface) {
 
-    fun getWeather(lat:Double,lng:Double): Single<List<WeatherDataItem>> {
-        return weatherDataSource.getWeatherData(lat,lng,2,"1867722b6af87e1d0388e10c5a94be34")
+    fun getWeather(name:String): Single<List<WeatherDataItem>> {
+        return weatherDataSource.getWeatherData("1867722b6af87e1d0388e10c5a94be34",name,2)
     }
-
 
 
 }
