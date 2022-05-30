@@ -17,6 +17,7 @@
             android:name=".ui.details.DetailsActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:name=".CountryWeatherActivity"
             android:exported="true">
             <intent-filter>

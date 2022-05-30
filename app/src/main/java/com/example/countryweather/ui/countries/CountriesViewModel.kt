@@ -41,7 +41,7 @@ class CountriesViewModel : ViewModel() {
 
                     },
                     {
-                        Log.i(Thread.currentThread().name, "${it.message}")
+                        Log.i("Error", "${it.message}")
                     })
         )
     }

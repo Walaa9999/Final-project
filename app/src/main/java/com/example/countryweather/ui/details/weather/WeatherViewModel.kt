@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class WeatherViewModel : ViewModel() {
 
-   var name:String = ""
+    var name: String = ""
 
     @Inject
     lateinit var weatherRepository: WeatherRepository
@@ -23,9 +23,9 @@ class WeatherViewModel : ViewModel() {
         CountriesWeatherApplication.appComponent.inject(this)
     }
 
-    private val _countriesLiveData = MutableLiveData<List<WeatherDataItem>>()
-    val weatherLiveData: LiveData<List<WeatherDataItem>>
-    get() = _countriesLiveData
+    private val _countriesLiveData = MutableLiveData<WeatherDataItem>()
+    val weatherLiveData: LiveData<WeatherDataItem>
+        get() = _countriesLiveData
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -47,8 +47,6 @@ class WeatherViewModel : ViewModel() {
                     })
         )
     }
-
-
 
 
     fun dispose() {

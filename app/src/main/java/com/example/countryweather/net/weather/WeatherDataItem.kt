@@ -1,7 +1,5 @@
 package com.example.countryweather.net.weather
 
-data class WeatherDataItem (
-    val humidity: Int,
-    val pressure: Int,
-    val temp: Temp,
+data class WeatherDataItem(
+    val list: List<Weather2Days>,
 )

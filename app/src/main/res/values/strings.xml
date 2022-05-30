@@ -16,4 +16,7 @@
     <string name="pressure">Pressure</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="today">Today</string>
+    <string name="country_flag2">country flag</string>
+    <string name="name2">name</string>
+    <string name="population2">population</string>
 </resources>

@@ -22,7 +22,7 @@
                 android:layout_height="194dp"
                 android:src="@drawable/ic_baseline_flag_24"
                 android:scaleType="centerCrop"
-                android:contentDescription="country flag"
+                android:contentDescription="@string/country_flag2"
                 />
 
             <LinearLayout
@@ -36,7 +36,7 @@
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="name"
+                    android:text="@string/name2"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     />
                 <TextView
@@ -44,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="population"
+                    android:text="@string/population2"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary"
                     />

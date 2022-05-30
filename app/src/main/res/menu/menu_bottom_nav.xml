@@ -4,10 +4,10 @@
         android:id="@+id/countryDetailsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_outlined_flag_24"
-        android:title="@string/country_details"/>
+        android:title="@string/country_details" />
     <item
         android:id="@+id/weatherDetailsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_cloud_queue_24"
-        android:title="@string/weather"/>
+        android:title="@string/weather" />
 </menu>
