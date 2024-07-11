@@ -2,15 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.countryweather">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".application.CountriesWeatherApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Countryweather">
+        android:theme="@style/Theme.Countryweather"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".CountryWeatherApplication"
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CountryWeatherActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
